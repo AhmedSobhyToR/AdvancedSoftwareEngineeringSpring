@@ -1,8 +1,6 @@
-import Menus.HomeMenu;
-import Refund.RefundHandler;
 import UserAdmin.AuthenInfo;
 import UserAdmin.Authentication;
-
+import Menus.HomeMenu;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,8 +9,7 @@ public class Main {
 
         AuthenInfo adminInfo = new AuthenInfo(adminEmail, password);
         Authentication authentication = new Authentication(adminInfo);
-        RefundHandler refundHandler = new RefundHandler();
 
-        new HomeMenu().display(authentication, refundHandler);
+        new HomeMenu().display(authentication);
     }
 }

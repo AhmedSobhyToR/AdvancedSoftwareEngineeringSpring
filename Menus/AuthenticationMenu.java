@@ -1,6 +1,5 @@
 package Menus;
 
-import Refund.RefundHandler;
 import UserAdmin.AuthenInfo;
 import UserAdmin.Authentication;
 import UserAdmin.User;
@@ -8,7 +7,7 @@ import UserAdmin.User;
 import java.util.Scanner;
 
 public class AuthenticationMenu {
-    public void display(Authentication auth, RefundHandler refundHandler) {
+    public void display(Authentication auth) {
         System.out.println("\n ------- User Authentication Menu -----");
         System.out.println("1. LogIn");
         System.out.println("2. Signup");
@@ -17,7 +16,7 @@ public class AuthenticationMenu {
         int choice = Read.readChoice("||CHOICE||: ", 1, 3);
 
         switch (choice) {
-            case 1 -> {
+            case 1 : {
                 System.out.print("Email:");
                 String email = new Scanner(System.in).nextLine();
 
@@ -29,13 +28,13 @@ public class AuthenticationMenu {
 
                 if (user != null) {
                     System.out.print("Successful Login ✅✅ \n");
-                    new UserMenu().display(auth, user, refundHandler);
+                    new UserMenu().display(auth, user);
                 } else {
                     System.out.print("Invalid Information ❌❌ \n");
-                    new AuthenticationMenu().display(auth, refundHandler);
+                    new HomeMenu().display(auth);
                 }
             }
-            case 2 -> {
+            case 2 : {
                 System.out.print("User Name:");
                 String userName = new Scanner(System.in).nextLine();
                 System.out.print("Email:");
@@ -48,17 +47,17 @@ public class AuthenticationMenu {
 
                 if (is_successful) {
                     System.out.print("User Has Been Created ✅✅ \n");
-                    new AuthenticationMenu().display(auth, refundHandler);
+                    new AuthenticationMenu().display(auth);
 
                 } else {
-                    System.out.print("User Already Exists ❌❌ \n");
-                    new AuthenticationMenu().display(auth, refundHandler);
+                    System.out.print("User Not Found ❌❌ \n");
+                    new HomeMenu().display(auth);
                 }
             }
-            case 3 -> {
-                new HomeMenu().display(auth, refundHandler);
+            case 3 : {
+                new HomeMenu().display(auth);
             }
-            default -> System.out.println("Wrong Choice");
+            default : System.out.println("Wrong Choice");
         }
     }
 }

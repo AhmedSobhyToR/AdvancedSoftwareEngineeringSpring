@@ -1,10 +1,13 @@
 package Payment;
 
 import UserAdmin.User;
+import UserAdmin.Models.UserModel;
 import ServicesProvider.IProvider;
 
-
 public abstract class IPayment {
-    float cost;
-    public abstract boolean pay(User user, IProvider servicesProvider);
+    public abstract boolean pay(UserModel userModel, IProvider servicesProvider);
+
+    public boolean pay(User user, IProvider service) {
+        return false;
+    }
 }
