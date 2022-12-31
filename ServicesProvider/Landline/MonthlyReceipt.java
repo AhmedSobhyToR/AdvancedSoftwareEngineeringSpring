@@ -9,6 +9,5 @@ public class MonthlyReceipt extends IProvider {
     public MonthlyReceipt(double price, boolean is_cash) {
         this.price = price;
         this.is_cash = is_cash;
-        this.name = "WE Monthly";
     }
 }
