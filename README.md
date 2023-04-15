@@ -1,6 +1,6 @@
 # Advanced Software Phase2
 Our IDS are: 20200681 20201083 20200368 20200020
-Fjdj
+
 1.	DataBase: H2 Spring Boot DataBase which save the data on the filesystem 
 2.	IDE: We have built the project on Intellij IDE 
 3.	Java Version: 17 
